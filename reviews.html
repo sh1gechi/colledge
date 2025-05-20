@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Отзывы студентов</title>
+  <link rel="stylesheet" href="courses.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00ffff;
+    }
+
+    form {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px #00ffff33;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #00ffff44;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background-color: #00cccc;
+    }
+
+    .review-card {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid #00ffff;
+      box-shadow: 0 0 10px #00ffff22;
+    }
+
+    .review-card h4 {
+      margin-top: 10px;
+      font-weight: normal;
+      color: #00ffff;
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Виртуальный колледж</div>
+        <nav class="nav" id="nav-links">
+          <a href="index.html">Главная</a>
+          <a href="course.html">Курсы</a>
+          
+          <a href="reviews.html">Отзывы</a>
+          <a href="contact.html">Контакты</a>
+        </nav>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="course.html" class="btn-primary">Начать обучение</a>
+      </header>
+  <div class="container">
+    <h1>Отзывы студентов</h1>
+
+    <form id="review-form">
+      <label for="name">Ваше имя:</label>
+      <input type="text" id="name" required />
+
+      <label for="message">Ваш отзыв:</label>
+      <textarea id="message" rows="4" required></textarea>
+
+      <button type="submit">Оставить отзыв</button>
+    </form>
+    <div class="review-card">
+        <p>Курс очень понравился</p><h4>Diana</h4>
+    </div>
+    <div class="review-card">
+        <p>Очень круто, взяли на работу</p><h4>Нурбол</h4>
+    </div>
+    <div class="review-card">
+        <p>Интересный курс, так еще и бесплатный</p><h4>Андрей</h4>
+    </div>
+    <div class="review-card">
+        <p>Класс</p><h4>Ерасыл</h4>
+    </div>
+    <div class="review-card">
+        <p>В целом нормально</p><h4>Димаш</h4>
+    </div>
+    <div id="review-list"></div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">Виртуальный колледж</div>
+      <nav class="footer-nav">
+        <a href="reviews.html">Отзывы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <p>© 2025 Виртуальный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    const form = document.getElementById('review-form');
+    const reviewList = document.getElementById('review-list');
+
+    function loadReviews() {
+      const saved = JSON.parse(localStorage.getItem('reviews')) || [];
+      reviewList.innerHTML = ''; // Очищаем
+      saved.forEach(r => renderReview(r.name, r.message));
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && message) {
+        const review = { name, message };
+        const saved = JSON.parse(localStorage.getItem('reviews')) || [];
+        saved.push(review);
+        localStorage.setItem('reviews', JSON.stringify(saved));
+        loadReviews();
+        form.reset();
+      }
+    });
+
+    function renderReview(name, message) {
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      card.innerHTML = `<p>${message}</p><h4>${name}</h4>`;
+      reviewList.appendChild(card);
+    }
+
+    document.addEventListener('DOMContentLoaded', loadReviews);
+
+  
+  const burger = document.getElementById('burger');
+const nav = document.getElementById('nav-links');
+
+burger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  burger.classList.toggle('active'); // для анимации бургера
+});
+
+  </script>
+</body>
+</html>

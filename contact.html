@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты — Виртуальный колледж</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="courses.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2e0e6f091.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Виртуальный колледж</div>
+        <nav class="nav" id="nav-links">
+          <a href="index.html">Главная</a>
+          <a href="course.html">Курсы</a>
+       
+          <a href="reviews.html">Отзывы</a>
+          <a href="contact.html">Контакты</a>
+        </nav>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="course.html" class="btn-primary">Начать обучение</a>
+      </header>
+
+  <section class="contact-header">
+    <h1>Свяжитесь с нами</h1>
+    <p>Если у вас есть вопросы, предложения или нужна помощь — напишите нам!</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="contact-form">
+      <h2>Форма обратной связи</h2>
+      <form>
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h2>Контактная информация</h2>
+      <p><i class="fas fa-map-marker-alt"></i> Алматы, Казахстан</p>
+      <p><i class="fas fa-envelope"></i> info@virtualcollege.kz</p>
+      <p><i class="fas fa-phone"></i> +7 (700) 123-45-67</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">Виртуальный колледж</div>
+      <nav class="footer-nav">
+        <a href="reviews.html">Отзывы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <p>© 2025 Виртуальный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+  <script>
+    const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav-links');
+  
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('active'); // для анимации бургера
+  });
+  </script>
+</body>
+</html>

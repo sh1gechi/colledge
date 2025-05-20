@@ -1,0 +1,146 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #00ffff;
+  }
+  
+  .contact-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(145deg, #0d0d0d, #111111);
+  }
+  
+  .contact-header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #00ffff;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #0f0f0f;
+  }
+  
+  .contact-form,
+  .contact-info {
+    width: 45%;
+    min-width: 300px;
+    background: #161616;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff55;
+  }
+  
+  .contact-form h2,
+  .contact-info h2 {
+    color: #00ffff;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .contact-form button {
+    background: #00ffff;
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background: #00cccc;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .contact-info i {
+    margin-right: 10px;
+    color: #00ffff;
+  }
+  
+  .socials a {
+    margin-right: 15px;
+    color: #00ffff;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  
+  .socials a:hover {
+    color: #ffffff;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .contact-form,
+    .contact-info {
+      width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+  }

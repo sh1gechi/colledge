@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Курсы — Виртуальный колледж</title>
+  <link rel="stylesheet" href="courses.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Виртуальный колледж</div>
+    <nav class="nav" id="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="course.html">Курсы</a>
+      
+      <a href="reviews.html">Отзывы</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="course.html" class="btn-primary">Начать обучение</a>
+  </header>
+
+  <section class="intro">
+    <h1>Наши курсы</h1>
+    <p>Обучайтесь востребованным рабочим профессиям с помощью цифровых технологий и VR. Практика, опыт, сертификация — всё в одном месте.</p>
+  </section>
+
+  <section class="filter">
+    <input type="text" placeholder="Поиск курсов..." />
+    <select>
+      <option value="">Категория</option>
+      <option>VR</option>
+      <option>3D-печать</option>
+      <option>Дизайн</option>
+      <option>IT</option>
+    </select>
+    <select>
+      <option value="">Уровень</option>
+      <option>Начальный</option>
+      <option>Продвинутый</option>
+    </select>
+  </section>
+
+  <section class="courses">
+  <div class="course-card" data-category="vr" data-level="начальный" data-title="vr-сварка">
+    <h3>VR-сварка</h3>
+    <p>Освой сварку с помощью виртуального симулятора.</p>
+    
+<button class="more-btn" data-title="VR-сварка" data-description="Освой современные методы сварки с помощью виртуального симулятора! Курс VR-сварки позволяет обучаться в полностью безопасной цифровой среде, моделируя реальные производственные условия. Идеально подходит как для начинающих, так и для тех, кто хочет отточить навыки без затрат на материалы. По завершении курса — цифровой сертификат и возможность стажировки на предприятии.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="механика" data-level="начальный" data-title="цифровая автомеханика">
+    <h3>Цифровая автомеханика</h3>
+    <p>Обучение диагностике и ремонту авто через симуляторы.</p>
+    <button class="more-btn" data-title="Цифровая автомеханика" data-description="Изучай устройство и ремонт современных автомобилей с помощью цифровых тренажеров и 3D-моделей. Курс охватывает диагностику, электрику, электронику и механическую часть авто. Реальные кейсы, симуляторы и базовые навыки работы с OBD-системами. Идеально для будущих автосервисов.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="3d-печать" data-level="продвинутый" data-title="виртуальная стройка">
+    <h3>Виртуальная стройка</h3>
+    <p>Управление строительной техникой в 3D-моделях.</p>
+    <button class="more-btn" data-title="Виртуальная стройка" data-description="Погрузись в строительную отрасль с помощью VR и цифровых технологий. Освой чтение чертежей, моделирование зданий, технику безопасности и управление строительными процессами в симулированной среде. Курс подойдет для будущих прорабов, архитекторов и инженеров.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="3d-печать" data-level="продвинутый" data-title="3d-печать">
+    <h3>3D-печать</h3>
+    <p>Создание и печать прототипов на 3D-принтерах.</p>
+    <button class="more-btn" data-title="3D-печать" data-description="Узнай, как из цифрового чертежа рождается физический объект. Курс по 3D-печати обучает моделированию, подготовке к печати, работе с различными типами филамента и принтеров. Идеально для тех, кто хочет создавать прототипы, детали и уникальные изделия.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="электрика" data-level="начальный" data-title="основы электрики">
+    <h3>Основы электрики</h3>
+    <p>Понимание схем и монтаж электропроводки.</p>
+    <button class="more-btn" data-title="Основы электрики" data-description="Получи практические знания по электроприборам, монтажу проводки, технике безопасности и работе с измерительными приборами. Курс включает как теорию, так и интерактивные тренажеры. Отличный старт для будущих электриков и монтажников.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="it" data-level="начальный" data-title="техническая поддержка">
+    <h3>Техническая поддержка</h3>
+    <p>Навыки работы с ПК, настройка и обслуживание.</p>
+    <button class="more-btn" data-title="Техническая поддержка" data-description="Научись решать технические проблемы, устанавливать ПО, работать с сетями и обеспечивать бесперебойную работу цифровой инфраструктуры. Курс развивает навыки поддержки пользователей и работы с системным оборудованием.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="логистика" data-level="продвинутый" data-title="логистика и склад">
+    <h3>Логистика и склад</h3>
+    <p>Цифровой учёт, управление поставками, автоматизация.</p>
+    <button class="more-btn" data-title="Логистика и склад" data-description="Освой управление логистическими процессами: приёмка, хранение, отгрузка товаров, цифровой учёт и складская автоматизация. Работа с системами управления складом (WMS), RFID и штрихкодами. Курс актуален для будущих кладовщиков, логистов и операторов.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="IT" data-level="начальный" data-title="делопроизводство">
+    <h3>Делопроизводство</h3>
+    <p>Работа с электронными документами и архивация.</p>
+    <button class="more-btn" data-title="Делопроизводство" data-description="Обучись правильному оформлению документов, ведению архива, электронной переписке и документообороту в организациях. Развивает навыки офисной работы, соблюдения ГОСТов и ведения дел в цифровой среде.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="дизайн" data-level="продвинутый" data-title="графический дизайн">
+    <h3>Графический дизайн</h3>
+    <p>Создание макетов, логотипов и бренд-стиля.</p>
+    <button class="more-btn" data-title="Графический дизайн" data-description="Изучи основы дизайна, композиции, цвета, типографики и работы с Adobe Photoshop и Illustrator. Создание логотипов, баннеров, визиток, интерфейсов. Подходит как для творческих, так и технических студентов.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="производство" data-level="начальный" data-title="цифровое производство">
+    <h3>Цифровое производство</h3>
+    <p>Работа с ЧПУ-станками и CAD/CAM технологиями.</p>
+    <button class="more-btn" data-title="Цифровое производство" data-description="Понимай полный цикл цифрового производства: от проектирования до автоматизированного изготовления. Работа с ЧПУ, CAM/CAD-системами и промышленными симуляторами. Актуально для индустрий 4.0.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="vr" data-level="начальный" data-title="vr-медицина">
+    <h3>VR-медицина</h3>
+    <p>Симуляторы для обучения основам медицинской помощи.</p>
+    <button class="more-btn" data-title="VR-медицина" data-description="Практикуй навыки медицинского осмотра, ухода за пациентами и экстренной помощи в безопасной виртуальной среде. Курс идеален для начинающих медицинских работников, колледжей и центров подготовки.">Подробнее</button>
+  </div>
+  
+  <div class="course-card" data-category="it" data-level="начальный" data-title="цифровой сервис">
+    <h3>Цифровой сервис</h3>
+    <p>Работа с клиентами и CRM-системами.</p>
+    <button class="more-btn" data-title="Цифровой сервис" data-description="Узнай, как обслуживать клиентов в цифровой эпохе: работа с CRM, онлайн-поддержка, чат-боты, клиентский UX. Подходит для будущих специалистов по продажам, клиентскому опыту и digital-менеджеров.">Подробнее</button>
+  </div>
+</section>
+<section class="why-courses">
+    <h2>Почему именно наши курсы?</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fa-solid fa-vr-cardboard"></i>
+        <h3>Обучение через VR</h3>
+        <p>Погружаемся в симуляции, чтобы учиться на практике.</p>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Сертификаты</h3>
+        <p>Получите официальное подтверждение навыков после курса.</p>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Помощь с трудоустройством</h3>
+        <p>Связь с работодателями и стажировки.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="cta">
+    <h2>Готов начать обучение?</h2>
+    <a href="send.html" class="btn-primary1">Записаться на курс</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">Виртуальный колледж</div>
+      <nav class="footer-nav">
+        <a href="reviews.html">Отзывы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <p>© 2025 Виртуальный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно -->
+<div id="courseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Название курса</h2>
+      <p id="modalDescription">Подробное описание курса появится здесь...</p>
+      <a href="send.html" class="btn-primary1" id="modal-btn">Записаться на курс</a>
+    </div>
+  </div>
+<script src="filter.js"></script>
+</body>
+</html>

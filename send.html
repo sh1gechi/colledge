@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Запись на курс</title>
+  <link rel="stylesheet" href="courses.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body.dark-theme {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Montserrat', sans-serif;
+    }.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00ffff;
+}
+
+.enroll-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.enroll-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #00ffff;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  background: #00ffff;
+  color: #000;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: #00cccc;
+  transform: scale(1.05);
+}
+
+#success-msg {
+  margin-top: 1rem;
+  color: #00ffcc;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  background: #111;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  border-top: 1px solid #222;
+  color: #888;
+}
+
+  </style>
+</head>
+<body class="dark-theme">
+    <header class="header">
+        <div class="logo">Виртуальный колледж</div>
+        <nav class="nav" id="nav-links">
+          <a href="index.html">Главная</a>
+          <a href="course.html">Курсы</a>
+          
+          <a href="reviews.html">Отзывы</a>
+          <a href="contact.html">Контакты</a>
+        </nav>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="course.html" class="btn-primary">Начать обучение</a>
+      </header>
+       <section class="enroll-section">
+    <div class="container">
+      <h1>Запись на курс</h1>
+      <p class="subtitle">Выберите курс и заполните форму для начала обучения</p>
+      <form id="enroll-form">
+        <label for="course">Курс:</label>
+        <select id="course" name="course">
+          <option value="">Выберите курс</option>
+          <option value="VR-сварка">VR-сварка</option>
+          <option value="Цифровая автомеханика">Цифровая автомеханика</option>
+          <option value="Виртуальная стройка">Виртуальная стройка</option>
+          <option value="3D-печать">3D-печать</option>
+          <option value="Основы электрики">Основы электрики</option>
+          <option value="Техническая поддержка">Техническая поддержка</option>
+          <option value="Логистика и склад">Логистика и склад</option>
+          <option value="Делопроизводство">Делопроизводство</option>
+          <option value="Графический дизайн">Графический дизайн</option>
+          <option value="Цифровое производство">Цифровое производство</option>
+          <option value="VR-медицина">VR-медицина</option>
+          <option value="Цифровой сервис">Цифровой сервис</option>
+        </select><label for="fullname">ФИО:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Электронная почта:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="comment">Комментарий (необязательно):</label>
+    <textarea id="comment" name="comment" rows="4"></textarea>
+    <button type="submit" class="submit-btn">Отправить заявку</button>
+    <p id="success-msg" class="hidden">Спасибо! Ваша заявка успешно отправлена.</p>
+  </form>
+</div>
+<footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">Виртуальный колледж</div>
+      <nav class="footer-nav">
+        <a href="reviews.html">Отзывы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <p>© 2025 Виртуальный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+
+    <script>
+    const form = document.getElementById('enroll-form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      successMsg.classList.remove('hidden');
+      form.reset();
+    });
+    
+  const burger = document.getElementById('burger');
+const nav = document.getElementById('nav-links');
+
+burger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  burger.classList.toggle('active'); // для анимации бургера
+});
+
+  </script></body>
+</html>

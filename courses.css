@@ -1,0 +1,313 @@
+/* === Стили для страницы "Курсы" === */
+
+body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #0d0d0d; color: #f0f0f0; }
+
+/* Хедер */ .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #111; border-bottom: 2px solid #00ffee33; } .logo { font-size: 24px ; font-weight: 700 ; color: #00ffff; } .nav a { margin: 0 15px; color: #ccc; text-decoration: none; transition: color 0.3s; } .nav a:hover { color: #00ffff; } .btn-primary { background: #00ffff; color: #000; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s; } .btn-primary:hover { background: #00cccc; }
+
+/* Вступление */ .intro { text-align: center; padding: 60px 20px; background: linear-gradient(to right, #001f1f, #003333); } .intro h1 { font-size: 36px; color: #00ffff; } .intro p { font-size: 18px; max-width: 800px; margin: 0 auto; }
+
+/* Фильтр */ .filter { display: flex; justify-content: center; gap: 20px; padding: 30px; flex-wrap: wrap; } .filter input, .filter select { padding: 10px 15px; border: none; border-radius: 8px; background: #1a1a1a; color: #fff; outline: none; }
+
+/* Курсы */ .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; padding: 40px; } .course-card { background: #1a1a1a; padding: 20px; border-radius: 12px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; } .course-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px #00ffff55; } .course-card img { width: 100px; height: 100px; object-fit: contain; margin-bottom: 15px; } .course-card h3 { color: #00ffff; margin-bottom: 10px; } .btn-secondary { background: transparent; border: 1px solid #00ffff; color: #00ffff; padding: 8px 16px; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 10px; transition: background 0.3s; } .btn-secondary:hover { background: #00ffff; color: #000; }
+
+/* Преимущества */ .benefits { padding: 50px 20px; text-align: center; background: #111; } .benefits h2 { color: #00ffff; margin-bottom: 30px; } .benefits ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; } .benefits li { margin-bottom: 15px; font-size: 18px; }
+
+/* Отзывы */ .reviews { background: #0d0d0d; padding: 40px 20px; text-align: center; } .reviews h2 { color: #00ffff; margin-bottom: 20px; } .reviews blockquote { font-style: italic; background: #1a1a1a; padding: 20px; margin: 20px auto; max-width: 600px; border-left: 5px solid #00ffff; }
+
+/* CTA */ .cta { text-align: center; padding: 60px 20px; background: linear-gradient(to right, #002222, #003333); } .cta h2 { font-size: 28px; margin-bottom: 20px; }
+
+/* Футер */ .footer { background: #111; padding: 30px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; } .footer-logo { font-size: 18px; font-weight: 600; color: #00ffff; } .footer-nav a { display: inline-block; margin-right: 15px; color: #ccc; text-decoration: none; font-size: 14px; } .footer-nav a:hover { color: #00ffff; } .footer-contacts p { font-size: 14px; color: #aaa; margin: 5px 0; }
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    margin-left: 15px;
+    z-index: 20;
+  }
+  .burger span {
+    width: 25px;
+    height: 3px;
+    background-color: #00ffcc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Анимация при открытии */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Скрываем навигацию на мобильных и показываем бургер */
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+      position: fixed;
+      top: 60px; /* под шапкой */
+      right: 0;
+      background-color: #000;
+      width: 200px;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      border-left: 2px solid #00ffcc;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+      z-index: 15;
+    }
+    nav.active {
+      display: flex;
+    }
+    .burger {
+      display: flex;
+    }
+    .btn-primary {
+      display: none;
+    }
+  }
+  
+  
+  @keyframes pulseGlow {
+    0% {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    50% {
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+    100% {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+  }
+  
+  .glow-animation {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ffff;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.5px;
+    animation: pulseGlow 2s infinite ease-in-out;
+  }
+
+  nav a {
+    color: #00ffff;
+    text-decoration: none;
+    margin: 0 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    font-size: 20px;
+  }
+  
+  nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00ffff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  nav a:hover {
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  .course-card button {
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .course-card button:hover {
+    background: #00ffff;
+    color: #111;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+
+  .why-courses {
+    text-align: center;
+    padding: 80px 20px;
+    background: #0d0d0d;
+    color: #fff;
+  }
+  
+  .why-courses h2 {
+    font-size: 36px;
+    color: #00ffff;
+    margin-bottom: 50px;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .feature {
+    background: #1a1a1a;
+    border: 1px solid #00ffff33;
+    border-radius: 20px;
+    padding: 30px;
+    width: 250px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00ffff22;
+  }
+  
+  .feature:hover {
+    box-shadow: 0 0 20px #00ffff88;
+    transform: translateY(-5px);
+  }
+  
+  .feature i {
+    font-size: 40px;
+    color: #00ffff;
+    margin-bottom: 15px;
+  }
+  
+  .feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00ffff;
+  }
+  
+  .feature p {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    color: #fff;
+    box-shadow: 0 0 15px #00ffff99;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-content h2 {
+    color: #00ffff;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content p {
+    color: #ccc;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+  }
+
+  .site-footer {
+    background: #0a0a0a;
+    color: #666;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00ffcc;
+    margin-bottom: 15px;
+    text-shadow:
+      0 0 5px #00ffcc,
+      0 0 10px #00ffcc;
+  }
+  
+  .footer-nav {
+    margin-bottom: 25px;
+  }
+  
+  .footer-nav a {
+    color: #00ffcc;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #00ff99;
+    text-shadow:
+      0 0 10px #00ff99;
+  }
+  
+  .site-footer p {
+    font-size: 14px;
+    color: #444;
+    margin-top: 10px;
+  }
+
+  .btn-primary1 {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+
+#modal-btn {
+  margin-top: 20px;
+}
